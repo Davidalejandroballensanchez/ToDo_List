@@ -1,0 +1,23 @@
+*{
+    font-family: 'Oxygen', sans-serif;
+}
+
+body{
+    background-color: lightblue;
+}
+
+main{
+    background: white;
+    margin: 50px auto;
+    width: 500px;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+input, button, select{
+    font-size: 18px;
+}
+
+h1{
+    padding:30px 20px 20px 20px;
+}
