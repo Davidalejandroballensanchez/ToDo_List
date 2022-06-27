@@ -44,6 +44,27 @@
     function renderTodos(){
         const todosContainer = document.querySelector('#todos');
         todosContainer.innerHTML = '';
+
+        todos.forEach(todo => {
+            todosContainer.innerHTML += renderTodo(todo);
+        });
+
+        document.querySelectorAll('.todo label input').forEach(item => {
+            item.addEventListener('click', e =>{
+                console.log('hopla xd');
+            });
+        });
+    };
+
+    function renderTodo(todo){
+        return `
+            <div class="todo" data-id="${todo.id}">
+                <label class="checkbox-container">${todo.text}
+                    <input type="checkbox" ${(todo.completed)? 'checked="checked"': ''} />
+                    <span class="checkmark"></span>           
+                </label>
+            </div>
+        `;
     };
 
     function renderLists(){};
