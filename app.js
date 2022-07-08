@@ -8,12 +8,18 @@ addBtn.addEventListener("click", (e) => {
     
     const text = input.value;
 
-    const li = document.createElement('li');
-    const p = document.createElement('p');
-    p.textContent = text;
+    if (text !== "") {
+        const li = document.createElement('li');
+        const p = document.createElement('p');
+        p.textContent = text;
 
-    li.appendChild(p);
-    ul.appendChild(li);
+        li.appendChild(p);
+        li.appendChild(addDeleteBtn());
+        ul.appendChild(li);
+
+        input.value = "";
+        empty.style.display = "none";
+    }
 });
 
 function addDeleteBtn () {
@@ -24,5 +30,13 @@ function addDeleteBtn () {
 
     deleteBtn.addEventListener('click', (e) => {
         const item = e.target.parentElement;
-    }); 
+        ul.removeChild(item);
+
+        const items = document.querySelectorAll("li");
+
+        if (items.length === 0) {
+            empty.style.display = "block";
+        }
+    });
+    return deleteBtn;
 };
